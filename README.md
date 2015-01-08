@@ -102,7 +102,8 @@ Open up **MessagingActivity.java**. In MyMessageClientListener, you will see onS
         @Override
         protected Void doInBackground(Void... voids) {
             HttpClient httpclient = new DefaultHttpClient();
-            HttpPost httppost = new HttpPost("http://your-domain.com?reg_id=" + regId);
+            //url of where your backend is hosted, can't be local!
+            HttpPost httppost = new HttpPost("http://your-domain.com?reg_id=" + regId);            
 
             try {
                 HttpResponse response = httpclient.execute(httppost);
