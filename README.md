@@ -1,10 +1,10 @@
-#SEND PUSH NOTIFICATIONS IN YOUR ANDROID MESSAGING APP USING GCM
+#Send Push Notifications In Your Android Messaging App Using GCM
 
 <img src="images/push.png" />
 
-This tutorial builds off the finished messaging app from this tutorial - [www.sinch.com/tutorials/android-messaging-tutorial-using-sinch-and-parse](https://www.sinch.com/tutorials/android-messaging-tutorial-using-sinch-and-parse/)
+This tutorial builds off the finished messaging app from our earlier tutorial [Android Messaging with Parse tutorial](https://www.sinch.com/tutorials/android-messaging-tutorial-using-sinch-and-parse/).
 
-If you want to skip the first tutorial, you can clone the finished source code from our Github - [github.com/sinch/android-messaging-tutorial](https://github.com/sinch/android-messaging-tutorial). You will need to add your Sinch key and secret to MessageService.java, and your Parse keys to MyApplication.java
+If you want to skip the first tutorial, you can clone the finished source code [from Github](https://github.com/sinch/android-messaging-tutorial). You will need to add your Sinch key and secret (don't forget to [sign up for an account](https://www.sinch.com/dashboard/#/signup) to MessageService.java, and your Parse keys to MyApplication.java
 
 For your convenience, I've built a sample backend in ruby that you can use to send the push notifications. Clone this repository, and follow the instructions in the README to get it set up. [github.com/sinch/push-backend-ruby](https://github.com/sinch/push-backend-ruby)
 
