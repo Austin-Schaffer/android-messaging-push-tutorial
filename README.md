@@ -200,7 +200,7 @@ Finally, your app should display the push notification, and open the app when cl
         }
     }
     
-##Test it out!
+##Test it out
 
 Register two users for the app, and then close the app on one of the devices. From the app that is still open, send a message to the user who doesn't have the app open. Within a few seconds (the speed of this depends on how fast GCM decides to deliver it), you will see a push notification on the device! 
 
