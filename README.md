@@ -21,7 +21,7 @@ To save time, here are all of the permissions that you will need to add to `Andr
     <uses-permission
         android:name="com.google.android.c2dm.permission.RECEIVE" />
 
-##Get Current User's Google Play ID
+##Get Current Users Google Play ID
 
 First, add the Google Play services library to your project by adding the following line in your `build.gradle` file dependencies:
 
