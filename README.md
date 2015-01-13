@@ -4,13 +4,13 @@
 
 This tutorial builds off the finished messaging app from our earlier tutorial [Android Messaging with Parse tutorial](https://www.sinch.com/tutorials/android-messaging-tutorial-using-sinch-and-parse/).
 
-If you want to skip the first tutorial, you can clone the finished source code [from Github](https://github.com/sinch/android-messaging-tutorial). You will need to add your Sinch key and secret (don't forget to [sign up for an account](https://www.sinch.com/dashboard/#/signup) to MessageService.java, and your Parse keys to MyApplication.java
+If you want to skip the first tutorial, you can clone the finished source code [from Github](https://github.com/sinch/android-messaging-tutorial). You will need to add your Sinch key and secret to `MessageService.java`, and your Parse keys to `MyApplication.java`. Don't forget to [sign up for a Sinch account](https://www.sinch.com/dashboard/#/signup).
 
-For your convenience, I've built a sample backend in ruby that you can use to send the push notifications. Clone this repository, and follow the instructions in the README to get it set up. [github.com/sinch/push-backend-ruby](https://github.com/sinch/push-backend-ruby)
+For your convenience, I've built a sample backend in ruby that you can use to send the push notifications. [Clone this repository](https://github.com/sinch/push-backend-ruby), and follow the instructions in the README to get it set up.
 
 ##Permissions
 
-To save time, here are all of the permissions that you will need to add to **AndroidManifest.xml** throughout the tutorial:
+To save time, here are all of the permissions that you will need to add to `AndroidManifest.xml` throughout the tutorial:
 
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -23,15 +23,15 @@ To save time, here are all of the permissions that you will need to add to **And
 
 ##Get Current User's Google Play ID
 
-First, add the google play services library to your project by adding the following line in your **build.gradle** file dependencies:
+First, add the Google Play services library to your project by adding the following line in your `build.gradle` file dependencies:
 
     compile "com.google.android.gms:play-services:4.0.+"
 
-Each user has a unique google play ID. Use an async task to fetch this while the user is logging in. First, you will need to get your project number from the google developer console. At the top of the overview page for your project, you will see a project number like so:
+Each user has a unique Google Play ID. Use an async task to fetch this while the user is logging in. First, you will need to get your project number from the Google developer console. At the top of the overview page for your project, you will see a project number like so:
 
 <img src="images/project-number.png" />
 
-Using your project id, declare the following in **LoginActivity.java** onCreate:
+Using your project ID, declare the following in `LoginActivity.java onCreate`:
 
     final GoogleCloudMessaging gcm = GoogleCloudMessaging.getInstance(getApplicationContext());
 
@@ -66,11 +66,11 @@ Then, change the three instances of this:
     startService(serviceIntent);
     startActivity(intent);
     
-To this:
+to this:
 
     (new RegisterGcmTask()).execute();
     
-Then, in **MessageService.java**, you can retrieve this id like so in onStartCommand:
+Then, in `MessageService.java`, you can retrieve this ID like so in `onStartCommand`:
 
     //declare globally
     private String regis;
@@ -81,7 +81,7 @@ Then, in **MessageService.java**, you can retrieve this id like so in onStartCom
 
 ##Register Push Data with Sinch
 
-Sinch takes care of deciding when a push notification needs to be sent (user is offline). To turn this feature on, add the following line in **MessageService.java** right before `sinchClient.start();`:
+Sinch takes care of deciding when a push notification needs to be sent (user is offline). To turn this feature on, add the following line in `MessageService.java right before `sinchClient.start();`:
 
     sinchClient.setSupportPushNotifications(true);
     
@@ -91,7 +91,7 @@ And then, after starting the Sinch client, register the current user's google pl
     
 ##Send the Push Notification
 
-Open up **MessagingActivity.java**. In MyMessageClientListener, you will see onShouldSendPushData; this is where you will send a push notification request to your backend:
+Open up `MessagingActivity.java`. In `MyMessageClientListener`, you will see `onShouldSendPushData`; this is where you will send a push notification request to your backend:
 
     //get the id that is registered with Sinch
     final String regId = new String(pushPairs.get(0).getPushData());
@@ -123,7 +123,7 @@ Open up **MessagingActivity.java**. In MyMessageClientListener, you will see onS
     
 ##Receive Push Notifications
 
-The app also needs to be able to wake up the device and deliver push notifications as they arrive. To wake the device, create **GcmBroadcastReceiver.java**:
+The app also needs to be able to wake up the device and deliver push notifications as they arrive. To wake the device, create `GcmBroadcastReceiver.java`:
 
     //in AndroidManifest.xml
     
@@ -156,7 +156,7 @@ The app also needs to be able to wake up the device and deliver push notificatio
     }
 
 
-Finally, your app should display the push notification, and open the app when clicked. Create **GcmIntentService.java** to do so:
+Finally, your app should display the push notification, and open the app when clicked. Create `GcmIntentService.java` to do so:
 
     //in AndroidManifest.xml
     
@@ -203,3 +203,5 @@ Finally, your app should display the push notification, and open the app when cl
 ##Test it out!
 
 Register two users for the app, and then close the app on one of the devices. From the app that is still open, send a message to the user who doesn't have the app open. Within a few seconds (the speed of this depends on how fast GCM decides to deliver it), you will see a push notification on the device! 
+
+Happy coding and if you have any questions, feel free to reach out to us on [Twitter](https://twitter.com/sinchdev) or via our [help page](https://www.sinch.com/help/dev-support/).
