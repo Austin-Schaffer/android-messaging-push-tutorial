@@ -89,13 +89,13 @@ Next, in `MessageService.java`, you can retrieve this ID in `onStartCommand`:
 
 ##Register push data with Sinch
 
-Sinch takes care of deciding when a push notification needs to be sent (when the user is offline). To turn this feature on, add the following line in `MessageService.java` right before `sinchClient.start();`:
+Sinch takes care of deciding when a push notification needs to be sent (when the user is offline). To turn this feature on, add the following line in `MessageService.java` right before `sinchClient.start();`
 
-```sinchClient.setSupportPushNotifications(true);```
+`sinchClient.setSupportPushNotifications(true);`
     
 And then, after starting the Sinch client, register the current user's Google Play ID with Sinch so Sinch knows where to deliver the message:
 
-```sinchClient.registerPushNotificationData(regId.getBytes());```
+`sinchClient.registerPushNotificationData(regId.getBytes());`
     
 ##Send the push notification
 
