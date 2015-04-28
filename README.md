@@ -80,7 +80,7 @@ Next, in `MessageService.java`, you can retrieve this ID in `onStartCommand`:
 
 ```
 //declare globally
-    private String regis;
+    private String regId;
 
 //onStartCommand
     regId = intent.getStringExtra("regId");
