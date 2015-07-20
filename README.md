@@ -31,7 +31,7 @@ First, add the Google Play services library to your project by inserting the fol
 
 Each user has a unique Google Play ID. Use an async task to fetch this while the user is logging in. First, you will need to get your project number from the Google developer console. At the top of the overview page for your project, you will see a project number like so:
 
-<img src="images/project-number.png" />
+![GCM Project Screen](images/project-number.png)
 
 Using your project ID, declare the following in `LoginActivity.java onCreate`:
 
@@ -166,7 +166,6 @@ public class GcmBroadcastReceiver extends WakefulBroadcastReceiver {
    }
 }
 ```
-
 
 Finally, your app should display the push notification and open the app when clicked. Create `GcmIntentService.java` to do so:
 
