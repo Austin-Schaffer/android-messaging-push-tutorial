@@ -1,6 +1,6 @@
 #Send Push Notifications in Your Android Messaging App Using GCM
 
-<img src="images/push.png" />
+![push notifications in android](images/push.png)
 
 This tutorial builds off the finished messaging app from our earlier tutorial on [Android messaging with Parse](https://www.sinch.com/tutorials/android-messaging-tutorial-using-sinch-and-parse/).
 
