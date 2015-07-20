@@ -2,7 +2,7 @@
 
 ![push notifications in android](images/push.png)
 
-This tutorial builds off the finished messaging app from our earlier tutorial on [Android messaging with Parse](https://www.sinch.com/tutorials/android-messaging-tutorial-using-sinch-and-parse/).
+In this tutorial, we will show you hopw to send push notifications in your Android app using Sinch and GCM. This tutorial builds off the finished messaging app from our earlier tutorial on [Android messaging with Parse](https://www.sinch.com/tutorials/android-messaging-tutorial-using-sinch-and-parse/).
 
 If you wish to skip the first tutorial, you can clone the finished source code [from Github](https://github.com/sinch/android-messaging-tutorial). You will need to add your Sinch key and secret to `MessageService.java`, and your Parse keys to `MyApplication.java`. Remember to [sign up for a Sinch account](https://www.sinch.com/dashboard/#/signup).
 
