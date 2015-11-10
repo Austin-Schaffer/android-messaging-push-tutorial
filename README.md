@@ -217,4 +217,4 @@ public class GcmIntentService extends IntentService {
 
 Register two users for the app and close the app on one of the devices. From the app that is still open, send a message to the user with the closed app. Within a few seconds, you will see a push notification on the device. (The speed of this depends on how fast GCM decides to deliver it.)
 
-Happy coding! If you have any questions, feel free to reach out to us on [Twitter](https://twitter.com/sinchdev) or via our [help page](https://www.sinch.com/help/dev-support/).
+Happy coding! If you have any questions, feel free to reach out to us on [Twitter](https://twitter.com/sinchdev) or via our [help page](https://www.sinch.com/support/).
